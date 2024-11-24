@@ -1,6 +1,6 @@
 # 📰 News Report
 
-The **News Report** project is a basic news website layout that provides an intuitive and user-friendly interface for users to stay updated on the latest news. The platform organizes content into various categories, including **📊 Business**, **💻 Technology**, **⚽ Sports**, and **🎭 Entertainment**, to cater to diverse user interests.
+The **News Report** project is a basic news website layout that provides an intuitive and user-friendly interface for users to stay updated on the latest news. The platform organizes content into various categories, including **Business**, **Technology**, **Sports**, and **Entertainment**, to cater to diverse user interests.
 
 ---
 
@@ -24,33 +24,25 @@ The **News Report** app is designed with a clean layout, enabling users to seaml
      - 📊 Business
      - 💻 Technology
 
-4. **📑 Navigation within Categories**:
-   - Browse articles by:
-     - 🗓️ Date
-     - ⭐ Popularity
-     - 🔍 Relevance
+4. **📑 Navigation within Categories and Accessing News Content**:
+   - Browse articles
+   - Read individual articles
 
-5. **📖 Accessing News Content**:
-   - Read individual articles.
-   - 🔗 Share articles on social media.
-   - 📌 Save articles for later.
-   - 💬 Participate in comments and discussions.
-
-6. **🚪 Logout**:
+5. **🚪 Logout**:
    - Securely log out and end the session.
 
 ---
 
 ## 📂 Process Flow
 
-1. **🏠 Homepage**: Top news stories are displayed.
-2. **🔐 User Authentication**:
+1. **Homepage**: Top news stories are displayed.
+2. **User Authentication**:
    - Users can either log in or sign up to personalize their experience.
-3. **📂 Category Navigation**:
+3. **Category Navigation**:
    - Select a category of interest to explore news articles.
-4. **📖 Article Access**:
+4. **Article Access**:
    - Click on an article to read and interact with the content.
-5. **🚪 Session End**:
+5. **Session End**:
    - Log out safely to close the session.
 
 ---
