@@ -28,7 +28,18 @@
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+      position: relative;
     }
+    .error-message{
+      color: #e74c3c;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      display: none;
+    }
+    
     .wrapper .title-text{
       display: flex;
       width: 200%;
@@ -165,7 +176,7 @@
       left: -100%;
       background: -webkit-linear-gradient(right,#003366,#004080,#0059b3, #0073e6);
       border-radius: 15px;
-      transition: all 0.4s ease;;
+      transition: all 0.4s ease;
     }
     form .btn:hover .btn-layer{
       left: 0;
@@ -188,6 +199,9 @@
 </head>
 <body>
   <div class="wrapper">
+    <!-- Error message container -->
+    <div class="error-message" id="error-message"></div>
+
     <div class="title-text">
       <div class="title login">Login Form</div>
       <div class="title signup">Signup Form</div>
@@ -203,7 +217,7 @@
       <div class="form-inner">
         <form action="/login" method="post" class="login">
           <div class="field">
-            <input type="text" placeholder="Email" name="email "required>
+            <input type="text" placeholder="Email" name="email" required>
           </div>
           <div class="field">
             <input type="password" placeholder="Password" name="password" required>
@@ -215,7 +229,7 @@
           </div>
           <div class="signup-link">Not a member? <a href="">Signup now</a></div>
         </form>
-        <form action="/signup" method="post"class="signup">
+        <form action="/signup" method="post" class="signup">
           <div class="field">
             <input type="text" placeholder="Email" name="email" required>
           </div>
@@ -223,7 +237,7 @@
             <input type="password" placeholder="Password" name="password" required>
           </div>
           <div class="field">
-            <input type="password" placeholder="Confirm password" name="Confirm_password"  required>
+            <input type="password" placeholder="Confirm password" name="Confirm_password" required>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
@@ -233,24 +247,44 @@
       </div>
     </div>
   </div>
+
   <script>
+    // Login/Signup toggle
     const loginText = document.querySelector(".title-text .login");
     const loginForm = document.querySelector("form.login");
     const loginBtn = document.querySelector("label.login");
     const signupBtn = document.querySelector("label.signup");
     const signupLink = document.querySelector("form .signup-link a");
-    signupBtn.onclick = (()=>{
+
+    signupBtn.onclick = (() => {
       loginForm.style.marginLeft = "-50%";
       loginText.style.marginLeft = "-50%";
     });
-    loginBtn.onclick = (()=>{
+    loginBtn.onclick = (() => {
       loginForm.style.marginLeft = "0%";
       loginText.style.marginLeft = "0%";
     });
-    signupLink.onclick = (()=>{
+    signupLink.onclick = (() => {
       signupBtn.click();
       return false;
     });
+
+    // Error message display
+    const errorDiv = document.getElementById('error-message');
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+    if (error) {
+      const decodedError = decodeURIComponent(error.replace(/\+/g, ' '));
+      errorDiv.textContent = decodedError;
+      errorDiv.style.display = 'block';
+
+      // Automatically switch to signup form if the error is signup-related
+      if (decodedError.includes("Passwords") || decodedError.includes("Email")) {
+        signupBtn.click();
+      } else {
+        loginBtn.click(); // Keep login form active for login errors
+      }
+    }
   </script>
 </body>
 </html>
