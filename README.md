@@ -3,6 +3,9 @@
 The **News Report** project is a basic news website layout that provides an intuitive and user-friendly interface for users to stay updated on the latest news. The platform organizes content into various categories, including **Business**, **Technology**, **Sports**, and **Entertainment**, to cater to diverse user interests.
 
 ---
+🌐 **Live Demo:** [Click here to visit the News Report website](https://news-report.onrender.com)
+
+---
 
 ## 🌟 About the Project
 
