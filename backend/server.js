@@ -8,10 +8,12 @@ const PORT = 3039;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname)); // Serve static HTML and other files
+
+// Serve static files from project root
+app.use(express.static(path.join(__dirname, '../')));
 
 // Database setup
-const db = new sqlite3.Database('./users.db', (err) => {
+const db = new sqlite3.Database(path.join(__dirname, 'users.db'), (err) => {
     if (err) console.error(err.message);
     else console.log('Connected to SQLite database.');
 });
@@ -25,9 +27,8 @@ db.run(`CREATE TABLE IF NOT EXISTS users (
 
 // Route to serve login/signup page
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html'));
+    res.sendFile(path.join(__dirname, '../login.html'));
 });
-
 
 // Login route
 app.post('/login', (req, res) => {
@@ -39,7 +40,7 @@ app.post('/login', (req, res) => {
         if (user.password !== password) return res.redirect('/login?error=Incorrect+password');
 
         // Successful login
-        res.redirect('/home2.html');
+        res.redirect('/pages/home2.html');
     });
 });
 
@@ -60,13 +61,13 @@ app.post('/signup', (req, res) => {
         }
 
         // Successful signup
-        res.redirect('/home2.html');
+        res.redirect('/pages/home2.html');
     });
 });
 
 // Optional: serve home2.html directly
-app.get('/home2.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'home2.html'));
+app.get('/pages/home2.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../pages/home2.html'));
 });
 
 app.listen(PORT, () => {
