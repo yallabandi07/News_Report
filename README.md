@@ -51,7 +51,7 @@ The **News Report** app is designed with a clean layout, enabling users to seaml
 
 - **Node.js**: Backend development
 - **HTML, CSS, JavaScript**: Frontend development
-- **Chrome**: Browser for testing and usage
+- **Chrome**: Browsering
 - **SQLite**: Database management
 - **Visual Studio Code**: Integrated Development Environment (IDE)
 
