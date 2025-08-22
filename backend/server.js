@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
-const PORT = 3039;
+const PORT = process.env.PORT || 3039;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -73,3 +73,4 @@ app.get('/pages/home2.html', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
