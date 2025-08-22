@@ -9,7 +9,7 @@ The **News Report** project is a basic news website layout that provides an intu
 ### 📝 Summary
 The **News Report** app is designed with a clean layout, enabling users to seamlessly navigate between categories and access news that matters most to them.
 
-### 🚀 Features
+### 🚀 Features & Process Flow 
 1. **🏠 Homepage**:
    - Displays top stories and highlighted articles across different categories.
    
@@ -33,20 +33,6 @@ The **News Report** app is designed with a clean layout, enabling users to seaml
 
 ---
 
-## 📂 Process Flow
-
-1. **Homepage**: Top news stories are displayed.
-2. **User Authentication**:
-   - Users can either log in or sign up to personalize their experience.
-3. **Category Navigation**:
-   - Select a category of interest to explore news articles.
-4. **Article Access**:
-   - Click on an article to read and interact with the content.
-5. **Session End**:
-   - Log out safely to close the session.
-
----
-
 ## 💻 Software Requirements
 
 - **Node.js**: Backend development
@@ -55,8 +41,4 @@ The **News Report** app is designed with a clean layout, enabling users to seaml
 - **SQLite**: Database management
 - **Visual Studio Code**: Integrated Development Environment (IDE)
 
----
 
-## ✅ Conclusion
-
-The **News Report** application offers a seamless and engaging experience for users to access a wide range of news content tailored to their preferences. With its intuitive design and robust functionality, it ensures users can stay informed and connected.
